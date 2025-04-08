@@ -1,7 +1,7 @@
 ---
 layout: allposts
-title: All posts
-landing-title: 'All posts'
+title: Blog
+landing-title: 'Blog'
 nav-menu: true
 description: null
 image: null
@@ -10,3 +10,4 @@ show_tile: false
 ---
 
 <h1>All posts</h1>
+toto

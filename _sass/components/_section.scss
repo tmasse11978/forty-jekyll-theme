@@ -21,6 +21,11 @@
       max-width: 100%;
 			margin-bottom: _size(element-margin);
 
+			.date {
+				font-size: .7em;
+				font-weight: 100;
+			}
+
 			> :first-child {
 				  margin-bottom: 0;
 				  width: calc(100% + 0.5em);

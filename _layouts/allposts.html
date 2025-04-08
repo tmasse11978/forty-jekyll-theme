@@ -12,25 +12,46 @@
 
     {% include header.html %} 
     
-    
     <!-- Main -->
     <div id="main" class="alt">
 
       <!-- One -->
       <section id="one">
-	<div class="inner">
+        <div class="inner">
           {% for post in site.posts %}
-	  {% if post.title != 404 %}
-	  <header class="major">
-	    <h1>{{ post.title }}</h1>
-	  </header>
-	  {% if post.image %}<span class="image main"><img src="{{ site.baseurl }}/{{ post.image }}" alt="" /></span>{% endif %}
-	  {% if post.date %}<p>{{ post.date }}</p>{% endif %}
-	  <p>{{ post.content }}</p>
-	  {% endif %}
-          {% endfor %}
-	</div>
+          {% if post.title != 404 %}
+            {% assign index = forloop.index0 | plus: 0 %}
+            {% assign is_even = index | modulo: 2 %}
+        
+            <header class="major">
+              <h3>
+                <span>
+                  {{ post.title }}
+                </span>
+                <em class="date">
+                  {% if post.date %}
+                    - {{ post.date | date: "%-d %B %Y" }}
+                  {% endif %}
+                </sup>
+              </h3>
+                
+            </header>
+            <p>
+            {% if post.image %}
+              <span class="image {% if is_even == 0 %}left{% else %}right{% endif %}">
+                <img src="{{ site.baseurl }}/{{ post.image }}" alt="{{ post.title }}" />
+              </span>
+            {% endif %}
+            {{ post.content }}
+            </p>
+          {% endif %}
+        {% endfor %}
+        
+        </div>
       </section>
+
+  
+
 
     </div>
 

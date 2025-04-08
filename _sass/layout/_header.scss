@@ -11,16 +11,27 @@
 		100% { top: 0; opacity: 1; }
 	}
 
+	.header {
+		&__logo {
+			max-height: 44px;
+			display: flex;
+		}
+
+		&__link {
+			align-items: center;
+		}
+	}
+
 	#header {
 		@include vendor('display', 'flex');
 		background-color: _palette(bg-alt);
 		box-shadow: 0 0 0.25em 0 rgba(0,0,0,0.15);
 		cursor: default;
 		font-weight: _font(weight-bold);
-		height: 3.25em;
+		height: 3.75em;
 		left: 0;
 		letter-spacing: _font(letter-spacing-alt);
-		line-height: 3.25em;
+		line-height: 3.75em;
 		margin: 0;
 		position: fixed;
 		text-transform: uppercase;
@@ -60,6 +71,10 @@
 					background-color: desaturate(darken(_palette(highlight), 15), 5);
 				}
 			}
+		}
+
+		.header__link.logo {
+			display: flex;
 		}
 
 		nav {
@@ -180,8 +195,8 @@
 		}
 
 		@include breakpoint(small) {
-			height: 2.75em;
-			line-height: 2.75em;
+			height: 3.75em;
+			line-height: 3.75em;
 
 			.logo {
 				padding: 0 1em;

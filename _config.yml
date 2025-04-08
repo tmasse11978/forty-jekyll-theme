@@ -1,7 +1,7 @@
 # site settings
-title: Forty
-subtitle: by HTML5 UP
-email: youremailaddress@gmail.com
+title: Aum Solutions
+subtitle: # by html5 up
+email: info@aumsolutions.org
 description: A responsive site template designed by HTML5 Up<br /> and released under the Creative Commons.
 baseurl: "/forty-jekyll-theme" # the subpath of your site, e.g. /blog
 url: # the base hostname & protocol for your site
@@ -16,6 +16,8 @@ phone: (716) 555-5555
 # homepage tiles
 tiles-source: pages # accepts "posts" or "pages"
 tiles-count: 6
+
+permalink: /:title/
 
 # social settings (key must match name of font awesome icon)
 # see https://fontawesome.com/icons?d=gallery&p=2&s=brands
