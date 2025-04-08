@@ -2,10 +2,10 @@
 layout: landing
 title: From discarded to legacy
 landing-title: 'From discarded to legacy'
-nav-menu: true
 description: Introducing Romain Pilliard & <br /> USE IT AGAIN
 image: assets/images/catamarran.webp
 author: null
+nav-menu: true
 show_tile: true
 ---
 

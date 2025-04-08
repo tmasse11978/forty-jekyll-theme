@@ -35,6 +35,8 @@ socials:
 
 # build settings
 markdown: kramdown
+plugins:
+  - jekyll-paginate-v2
 
 sass:
   style: compressed
@@ -44,3 +46,20 @@ exclude:
 - LICENSE.md
 - CONTRIBUTING.md
 - README.md 
+
+collections:
+  blog:
+    output: true
+    permalink: /blog/:path/
+
+pagination:
+  enabled: true
+  collection: blog
+  per_page: 3
+  permalink: '/blog/page/:num/'
+  title: ':title - page :num'
+  sort_field: 'date'
+  sort_reverse: true
+  trail:
+    before: 2
+    after: 2
