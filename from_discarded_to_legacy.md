@@ -7,6 +7,8 @@ image: assets/images/catamarran.webp
 author: null
 nav-menu: true
 show_tile: true
+order: 1
+tile_color: style1
 ---
 
 <!-- Main -->

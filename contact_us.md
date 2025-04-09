@@ -4,6 +4,8 @@ title: Contact us
 description: null
 image: assets/images/coffee.webp
 nav-menu: true
+show_tile: true
+order: 4
 ---
 
 <section id="one">

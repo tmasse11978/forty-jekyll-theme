@@ -1,7 +1,8 @@
 ---
 title: Blog
 permalink: /posts/
-layout: tile
+layout: post
 nav-menu: true
 show_tile: true
+order: 2
 ---
