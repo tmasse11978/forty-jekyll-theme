@@ -8,31 +8,31 @@ pagination:
 
 <section id="two" class="spotlights">
 {% for post in paginator.posts %}
-{% if post.title != 404 %}
-    <section>
-        {% if post.image %}
-            <a href="{{ site.baseurl }}/{{ post.url }}/" class="image">
-                <img src="{{ site.baseurl }}/{{ post.image }}" alt="{{ post.title }}" data-position="center center" />
-            </span>
-        {% endif %}
-        <div class="content">
-            <div class="inner">
-                <header class="major">
-                    <h3>{{ post.title }}</h3>
-                    <em class="date">
-                        {% if post.date %}
-                        {{ post.date | date: "%-d %B %Y" }}
-                        {% endif %}
-                    </em>
-                </header>
-                <p>{{ post.description }}</p>
-                <ul class="actions">
-                    <li><a href="{{ site.baseurl }}/{{ post.url }}/" class="button">Learn more</a></li>
-                </ul>
+    {% if post.title != 404 %}
+        <section class="post-tile{% if forloop.last %} mb-2{% endif %}">
+            {% if post.image %}
+                <a href="{{ site.baseurl }}/{{ post.url }}/" class="image">
+                    <img src="{{ site.baseurl }}/{{ post.image }}" alt="{{ post.title }}" data-position="center center" />
+                </span>
+            {% endif %}
+            <div class="content">
+                <div class="inner">
+                    <header class="major">
+                        <h3>{{ post.title }}</h3>
+                        <em class="date">
+                            {% if post.date %}
+                            {{ post.date | date: "%-d %B %Y" }}
+                            {% endif %}
+                        </em>
+                    </header>
+                    <p>{{ post.description }}</p>
+                    <ul class="actions">
+                        <li><a href="{{ site.baseurl }}/{{ post.url }}/" class="button">Learn more</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </section>
-{% endif %}
+        </section>
+    {% endif %}
 {% endfor %}
 </section>
 <!-- 
@@ -52,13 +52,19 @@ pagination:
       </li>
       {% endif %}
 
-      {% if paginator.page_trail %}
-        {% for trail in paginator.page_trail %}
-          <li {% if page.url == trail.path %}class="selected"{% endif %}>
-              <a href="{{ trail.path | prepend: site.baseurl | replace: '//', '/' }}" title="{{trail.title}}">{{ trail.num }}</a>
-          </li>
-        {% endfor %}
-      {% endif %}
+        {% if paginator.page_trail %}
+            {% assign current = page.url | replace:'index.html','' | replace:'//','/' %}
+            {% for trail in paginator.page_trail %}
+                {% assign trail_path = trail.path | replace:'index.html','' | replace:'//','/' %}
+                <li class="{% if current == trail_path %}selected{% endif %}">
+                {% if current == trail_path %}
+                    <span>{{ trail.num }}</span>
+                {% else %}
+                    <a href="{{ trail.path | prepend: site.baseurl | replace: '//','/' }}" title="{{ trail.title }}">{{ trail.num }}</a>
+                {% endif %}
+                </li>
+            {% endfor %}
+        {% endif %}
 
       {% if paginator.next_page %}
       <li class="next">

@@ -1,0 +1,13 @@
+.pager {
+    display: flex;
+    justify-content: center;
+
+    li {
+        list-style-type: none;
+    }
+
+    li.selected span {
+        font-weight: bold;
+        cursor: default;
+      }
+}
