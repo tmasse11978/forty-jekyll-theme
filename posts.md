@@ -11,7 +11,7 @@ pagination:
     {% if post.title != 404 %}
         <section class="post-tile{% if forloop.last %} mb-2{% endif %}">
             {% if post.image %}
-                <a href="{{ site.baseurl }}/{{ post.url }}/" class="image">
+                <a href="{{ post.url | relative_url }}" class="image">
                     <img src="{{ site.baseurl }}/{{ post.image }}" alt="{{ post.title }}" data-position="center center" />
                 </span>
             {% endif %}
@@ -27,7 +27,7 @@ pagination:
                     </header>
                     <p>{{ post.description }}</p>
                     <ul class="actions">
-                        <li><a href="{{ site.baseurl }}/{{ post.url }}/" class="button">Learn more</a></li>
+                        <li><a href="{{ post.url | relative_url }}" class="button">Learn more</a></li>
                     </ul>
                 </div>
             </div>
